@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Helios Launcher is a modded Minecraft launcher built with Electron. It allows users to join modded servers without manually installing Java, Forge, or mods. The launcher handles authentication (Microsoft OAuth 2.0 and Mojang Yggdrasil), distribution management, automatic updates, and Discord Rich Presence integration.
+WetCat Launcher is a modded Minecraft launcher built with Electron. It allows users to join modded servers without manually installing Java, Forge, or mods. The launcher handles authentication (Microsoft OAuth 2.0 and Mojang Yggdrasil), distribution management, automatic updates, and Discord Rich Presence integration.
 
 ## Development Commands
 
@@ -57,13 +57,13 @@ Note: macOS builds may not work on Windows/Linux and vice-versa due to platform-
 The launcher uses specialized manager modules for separation of concerns:
 
 **ConfigManager** ([app/assets/js/configmanager.js](app/assets/js/configmanager.js))
-- Stores user settings in `.helioslauncher/config.json`
+- Stores user settings in `.wetcatlauncher/config.json`
 - Manages game resolution, RAM allocation, data directory
 - Handles account authentication database
 - Platform-specific data directory handling:
-  - Windows: `%APPDATA%/.helioslauncher`
-  - macOS: `~/Library/Application Support/.helioslauncher`
-  - Linux: `~/.helioslauncher`
+  - Windows: `%APPDATA%/.wetcatlauncher`
+  - macOS: `~/Library/Application Support/.wetcatlauncher`
+  - Linux: `~/.wetcatlauncher`
 
 **AuthManager** ([app/assets/js/authmanager.js](app/assets/js/authmanager.js))
 - Abstracts authentication logic for Microsoft OAuth 2.0 and Mojang Yggdrasil
@@ -208,7 +208,7 @@ The launcher fetches a distribution index (JSON) from a remote server that defin
 - Server icons, descriptions, and metadata
 - Discord Rich Presence configuration
 
-Use [Nebula](https://github.com/dscalzi/Nebula) to automate distribution index generation. See [helios-distribution-types](https://github.com/dscalzi/helios-distribution-types) for the complete schema specification.
+Use [Nebula](https://github.com/raykoshima/Nebula) to automate distribution index generation. See [helios-distribution-types](https://github.com/raykoshima/helios-distribution-types) for the complete schema specification.
 
 ## Build System
 
